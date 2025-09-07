@@ -22,13 +22,13 @@ module.exports = {
         error: "#F14141",
         success: "#2F9B65",
       },
-      fontFamily: {
-        quicksand: ["Quicksand-Regular", "sans-serif"],
-        "quicksand-bold": ["Quicksand-Bold", "sans-serif"],
-        "quicksand-semibold": ["Quicksand-SemiBold", "sans-serif"],
-        "quicksand-light": ["Quicksand-Light", "sans-serif"],
-        "quicksand-medium": ["Quicksand-Medium", "sans-serif"],
-      },
+       fontFamily: {
+    quicksand: ["QuickSand-Regular"],   // default
+    "quicksand-bold": ["QuickSand-Bold"],
+    "quicksand-semibold": ["QuickSand-SemiBold"],
+    "quicksand-medium": ["QuickSand-Medium"],
+    "quicksand-light": ["QuickSand-Light"],
+  },
     },
   },
   plugins: [],
