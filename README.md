@@ -1,6 +1,5 @@
-# Welcome to your Expo app 👋
+# React Native Food Delivery👋
 
-Food Delivery App based on ReactNative
 
 ## Get started
 
