@@ -6,7 +6,7 @@ const Signup = () => {
   return (
     <View>
       <Text>Signup</Text>
-            <Button title='Sign In' onPress={()=>router.push("/signup")} />
+            <Button title='Sign In' onPress={()=>router.push("/signin")} />
     </View>
   )
 }
