@@ -1,13 +1,12 @@
 import { Slot } from 'expo-router'
 import React from 'react'
-import { Text } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { KeyboardAvoidingView, Text } from 'react-native'
 
 export default function _layout() {
   return (
-    <SafeAreaView>
+    <KeyboardAvoidingView>
       <Text>Auth Layout</Text>
       <Slot/>
-    </SafeAreaView>
+    </KeyboardAvoidingView>
   )
 }
