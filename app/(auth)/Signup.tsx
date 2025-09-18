@@ -9,7 +9,7 @@ const[isSubmitting,setIsSubmitting] = useState(false)
   const[form,setForm] = useState({name:'',email:'',password:''})
 
   const submit = async()=>{
-    if(!form.name || !form.email || !form.password) Alert.alert('Error','Please fill all the fields')
+    if(!form.name || !form.email || !form.password) return Alert.alert('Error','Please fill all the fields')
 
     setIsSubmitting(true)
 
