@@ -11,7 +11,7 @@ const Signin = () => {
   const[form,setForm] = useState({email:'',password:''})
 
   const submit = async()=>{
-    if(!form.email || !form.password) Alert.alert('Error','Please fill all the fields')
+    if(!form.email || !form.password) return Alert.alert('Error','Please fill all the fields')
 
     setIsSubmitting(true)
 
@@ -50,7 +50,7 @@ const Signin = () => {
       title='Sign In'
       isLoading={isSubmitting}
       onPress={submit}/>
-      
+
       <View className='flex justify-center mt-5 flex-row gap-2'>
         <Text className='base-regular text-gray-100'>Don't have an account?</Text>
         <Link href="/signup" className='base-bold text-primary'>Sign Up</Link>
