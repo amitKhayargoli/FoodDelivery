@@ -13,7 +13,7 @@ const[isSubmitting,setIsSubmitting] = useState(false)
 
     setIsSubmitting(true)
 
-    try{
+    try{ 
       //Call Apprwite Sign Up API
 
       Alert.alert('Success','You are signed in')
