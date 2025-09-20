@@ -1,4 +1,5 @@
-import { Account, Avatars, Client, Databases } from "react-native-appwrite";
+import { CreateUserParams } from "@/type";
+import { Account, Avatars, Client, Databases, ID } from "react-native-appwrite";
 
 export const appwriteConfig = {
     endpoint : process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
@@ -20,3 +21,36 @@ export const appwriteConfig = {
 export const account = new Account(client);
 export const databases = new Databases(client);
 const avatars = new Avatars(client);
+
+export const createUser = async ({email,password,name}:CreateUserParams)=>{
+    try{
+        const newAccount = await account.create(ID.unique(),email,password,name);
+
+        if(!newAccount) throw Error;
+
+        await SignIn({email,password});
+
+        const avatarUrl = avatars.getInitialsURL(name);
+
+        const newUser = await databases.createDocument(
+            appwriteConfig.databaseId!,
+            appwriteConfig.userCollectionId!,
+            ID.unique(),
+            {
+                email,name,
+                accountId: newAccount.$id,
+                avatar : avatarUrl
+            }
+        );
+
+        return newUser;
+    }
+    catch(err){
+        throw new Error(err as string);
+    }
+
+}
+
+function SignIn(arg0: { email: string; password: string; }) {
+    throw new Error("Function not implemented.");
+}
