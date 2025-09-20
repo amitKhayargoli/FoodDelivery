@@ -1,4 +1,4 @@
-import { CreateUserParams } from "@/type";
+import { CreateUserParams, SignInParams } from "@/type";
 import { Account, Avatars, Client, Databases, ID } from "react-native-appwrite";
 
 export const appwriteConfig = {
@@ -32,7 +32,7 @@ export const createUser = async ({email,password,name}:CreateUserParams)=>{
 
         const avatarUrl = avatars.getInitialsURL(name);
 
-        const newUser = await databases.createDocument(
+        return await databases.createDocument(
             appwriteConfig.databaseId!,
             appwriteConfig.userCollectionId!,
             ID.unique(),
@@ -43,7 +43,6 @@ export const createUser = async ({email,password,name}:CreateUserParams)=>{
             }
         );
 
-        return newUser;
     }
     catch(err){
         throw new Error(err as string);
@@ -51,6 +50,12 @@ export const createUser = async ({email,password,name}:CreateUserParams)=>{
 
 }
 
-function SignIn(arg0: { email: string; password: string; }) {
-    throw new Error("Function not implemented.");
+export const SignIn = async({ email, password } : SignInParams)  =>{
+ 
+    try{
+        const session = await account.createEmailPasswordSession(email, password);
+    }
+    catch(err){ 
+        throw new Error(err as string);
+    }
 }
