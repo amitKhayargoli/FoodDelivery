@@ -64,6 +64,37 @@ export default function _layout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Search",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon title="Search" icon={images.search} focused={focused} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Cart",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon title="Cart" icon={images.bag} focused={focused} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon
+              title="Profile"
+              icon={images.person}
+              focused={focused}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
