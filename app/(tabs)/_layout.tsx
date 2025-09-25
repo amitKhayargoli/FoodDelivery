@@ -64,7 +64,7 @@ export default function _layout() {
           ),
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name="index"
         options={{
           title: "Search",
@@ -85,16 +85,16 @@ export default function _layout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Profile",
+          title: "Settings",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon
-              title="Profile"
-              icon={images.person}
+              title="Settings"
+              icon={images.settings}
               focused={focused}
             />
           ),
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
