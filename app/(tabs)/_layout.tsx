@@ -89,7 +89,7 @@ export default function _layout() {
           tabBarIcon: ({ focused }) => (
             <TabBarIcon
               title="Settings"
-              icon={images.settings}
+              icon={images.person}
               focused={focused}
             />
           ),
