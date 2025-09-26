@@ -46,7 +46,7 @@ export default function _layout() {
           height: 80,
           position: "absolute",
           bottom: 40,
-          // backgroundColor: "white",
+          backgroundColor: "white",
           shadowColor: "#1a1a1a",
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.1,
